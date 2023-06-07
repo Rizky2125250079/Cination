@@ -14,15 +14,13 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("auth/login")
-    Call<ValueData<User>> login(@Field("key") String key,
-                            @Field("username") String username,
+    Call<ValueData<User>> login(@Field("username") String username,
                             @Field("password") String password);
 
 
     @FormUrlEncoded
     @POST("auth/register")
-    Call<ValueData<User>>  register(@Field("key") String key,
-                               @Field("username") String username,
+    Call<ValueData<User>>  register(@Field("username") String username,
                                @Field("password") String password);
 
     @FormUrlEncoded

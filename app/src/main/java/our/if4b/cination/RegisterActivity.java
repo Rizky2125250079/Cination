@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(String username, String password) {
         binding.progressBar.setVisibility(View.VISIBLE);
         ApiService api = Utility.getRetrofit().create(ApiService.class);
-        Call<ValueData<User>> call = api.register("cination",username, password);
+        Call<ValueData<User>> call = api.register(username, password);
         call.enqueue(new Callback<ValueData<User>>() {
             @Override
             public void onResponse(Call<ValueData<User>> call, Response<ValueData<User>> response) {

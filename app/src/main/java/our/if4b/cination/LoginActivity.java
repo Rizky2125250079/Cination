@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
     private void login(String username, String password) {
         binding.progressBar.setVisibility(View.VISIBLE);
         ApiService api = Utility.getRetrofit().create(ApiService.class);
-        Call<ValueData<User>> call = api.login("cination",username,password);
+        Call<ValueData<User>> call = api.login(username,password);
 
         call.enqueue(new Callback<ValueData<User>>() {
             @Override
