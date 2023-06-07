@@ -13,14 +13,14 @@ public interface ApiService {
     Call<ValueData<List<Post>>> getPost(@Field("key") String key);
 
     @FormUrlEncoded
-    @POST("loginUser")
-    Call<ValueNoData> login(@Field("key") String key,
+    @POST("auth/login")
+    Call<ValueData<User>> login(@Field("key") String key,
                             @Field("username") String username,
                             @Field("password") String password);
 
 
     @FormUrlEncoded
-    @POST("registerUser")
+    @POST("auth/register")
     Call<ValueNoData> register(@Field("key") String key,
                                @Field("username") String username,
                                @Field("password") String password);
@@ -33,9 +33,9 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("updatePost")
-    Call<ValueNoData> updatePost(@Field("key") String key,
-                                 @Field("id") String id,
-                                 @Field("content") String content);
+    Call<ValueNoData> updatePost(@Field("id") String id,
+                                 @Field("negara") String negara,
+                                 @Field("ibukota") String ibukota);
 
     @FormUrlEncoded
     @POST("deletePost")

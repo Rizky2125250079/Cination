@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Utility {
     private static final String PREFERENCE_FILE_KEY = Utility.class.getPackage().getName();
 
-    private static final String BASE_URL ="https://restapi.mdp.ac.id/tulisaja/";
+    private static final String BASE_URL ="https://cination-api.vercel.app/";
     public static Retrofit retrofit;
 
     public static Retrofit getRetrofit() {
