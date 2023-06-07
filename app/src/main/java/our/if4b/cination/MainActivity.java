@@ -2,6 +2,7 @@ package our.if4b.cination;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
+        postViewAdapter = new PostViewAdapter();
+        binding.rvPost.setLayoutManager(new LinearLayoutManager(this));
+        binding.rvPost.setActivated(postViewAdapter);
     }
 
 
@@ -86,5 +91,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onResume() {
+        super.onResume();
+        getAllPost();
     }
 }
