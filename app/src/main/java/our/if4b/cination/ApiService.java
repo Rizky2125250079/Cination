@@ -13,7 +13,7 @@ import retrofit2.http.PUT;
 public interface ApiService {
     @FormUrlEncoded
     @GET("post")
-    Call<ValueData<Post>> getPost();
+    Call<ValueData<List<Post>>> getPost();
 
     @FormUrlEncoded
     @POST("auth/login")

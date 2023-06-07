@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void getAllPost() {
         ApiService api = Utility.getRetrofit().create(ApiService.class);
-        Call<ValueData<Post>> call = api.getPost();
+        Call<ValueData<List<Post>>> call = api.getPost();
 
-        call.enqueue(new Callback<ValueData<Post>>() {
+        call.enqueue(new Callback<ValueData<List<Post>>>() {
             @Override
-            public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {
+            public void onResponse(Call<ValueData<List<Post>>> call, Response<ValueData<List<Post>>> response) {
                 if (response.code() == 200) {
                     int success = response.body().getSuccess();
                     String message = response.body().getMessage();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ValueData<Post>> call, Throwable t) {
+            public void onFailure(Call<ValueData<List<Post>>> call, Throwable t) {
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(MainActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
