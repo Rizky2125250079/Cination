@@ -21,7 +21,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("auth/register")
-    Call<ValueNoData> register(@Field("key") String key,
+    Call<ValueData<User>>  register(@Field("key") String key,
                                @Field("username") String username,
                                @Field("password") String password);
 
