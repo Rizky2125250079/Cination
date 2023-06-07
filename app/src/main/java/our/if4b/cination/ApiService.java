@@ -13,26 +13,16 @@ public interface ApiService {
     Call<ValueData<List<Post>>> getPost(@Field("key") String key);
 
     @FormUrlEncoded
-<<<<<<< Updated upstream
     @POST("auth/login")
     Call<ValueData<User>> login(@Field("key") String key,
                             @Field("username") String username,
-=======
-    @POST("auth/loginUser")
-    Call<ValueNoData> login(@Field("username") String username,
->>>>>>> Stashed changes
                             @Field("password") String password);
 
 
     @FormUrlEncoded
-<<<<<<< Updated upstream
     @POST("auth/register")
     Call<ValueData<User>>  register(@Field("key") String key,
                                @Field("username") String username,
-=======
-    @POST("auth/registerUser")
-    Call<ValueNoData> register(@Field("username") String username,
->>>>>>> Stashed changes
                                @Field("password") String password);
 
     @FormUrlEncoded
