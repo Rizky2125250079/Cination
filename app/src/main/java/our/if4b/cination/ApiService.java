@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 public interface ApiService {
     @FormUrlEncoded
     @POST("getAllPost")
-    Call<ValueData<List<Post>>> getPost(@Field("key") String key);
+    Call<ValueData<List<Post>>> getPost();
 
     @FormUrlEncoded
     @POST("auth/login")
@@ -26,7 +26,6 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("insertPost")
     Call<ValueNoData> addPost(@Field("key") String key,
-                              @Field("username") String username,
                               @Field("negara") String negara,
                               @Field("ibukota") String ibukota);
 

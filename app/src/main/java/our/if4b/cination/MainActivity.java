@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.List;
 
 import our.if4b.cination.databinding.ActivityMainBinding;
+import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getAllPost() {
         ApiService api = Utility.getRetrofit().create(ApiService.class);
-//        Call<ValueData<List<Post>>> call = api.getPost("");
+        Call<ValueData<List<Post>>> call = api.getPost();
     }
 
     @Override
