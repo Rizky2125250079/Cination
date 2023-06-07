@@ -5,7 +5,11 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+<<<<<<< Updated upstream
 public class Post implements Parcelable{
+=======
+public class Post implements Parcelable {
+>>>>>>> Stashed changes
     private String id;
     private String negara;
     private String ibukota;
@@ -78,5 +82,20 @@ public class Post implements Parcelable{
 
     public String getUsername() {
         return username;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(content);
+        dest.writeString(user_id);
+        dest.writeString(created_date);
+        dest.writeString(modified_date);
+        dest.writeString(username);
     }
 }
