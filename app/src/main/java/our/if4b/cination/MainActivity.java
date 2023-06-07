@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         postViewAdapter = new PostViewAdapter();
         binding.rvPost.setLayoutManager(new LinearLayoutManager(this));
-        binding.rvPost.setActivated(postViewAdapter);
+        binding.rvPost.setAdapter(postViewAdapter);
     }
 
 
@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onResume() {
-        super.onResume();
-        getAllPost();
-    }
+//    public void onResume() {
+//        super.onResume();
+//        getAllPost();
+//    }
 }
