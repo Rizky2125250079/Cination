@@ -37,4 +37,16 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
+
+    public String getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getCreated_date() {
+        return created_date;
+    }
 }
