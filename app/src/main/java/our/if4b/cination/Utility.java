@@ -46,4 +46,11 @@ public class Utility {
         editor.putString("xUsername", null);
         editor.apply();
     }
+
+    public static void clearUser(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(PREFERENCE_FILE_KEY, context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("xUsername", null);
+        editor.apply();
+    }
 }
