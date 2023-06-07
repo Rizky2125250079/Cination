@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Cination"
+        android:theme="@style/Theme.Cination.ActionBar"
         tools:targetApi="31">
         <activity
             android:name=".RegisterActivity"
@@ -25,8 +25,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true"
-            android:parentActivityName=".MainActivity">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
