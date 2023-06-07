@@ -29,7 +29,8 @@ public interface ApiService {
     @POST("insertPost")
     Call<ValueNoData> addPost(@Field("key") String key,
                               @Field("username") String username,
-                              @Field("content") String content);
+                              @Field("negara") String negara,
+                              @Field("ibukota") String ibukota);
 
     @FormUrlEncoded
     @POST("updatePost")

@@ -71,10 +71,10 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(String username, String password) {
         binding.progressBar.setVisibility(View.VISIBLE);
         ApiService api = Utility.getRetrofit().create(ApiService.class);
-        Call<ValueNoData> call = api.register(username, password);
-        call.enqueue(new Callback<ValueNoData>() {
+        Call<ValueData<User>> call = api.register("cination",username, password);
+        call.enqueue(new Callback<ValueData<User>>() {
             @Override
-            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
+            public void onResponse(Call<ValueData<User>> call, Response<ValueData<User>> response) {
                 binding.progressBar.setVisibility(View.GONE);
                 if(response.code() == 200){
                     int success = response.body().getSuccess();
@@ -97,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ValueNoData> call, Throwable t) {
+            public void onFailure(Call<ValueData<User>> call, Throwable t) {
                 binding.progressBar.setVisibility(View.GONE);
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(RegisterActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
