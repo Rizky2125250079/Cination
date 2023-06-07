@@ -15,17 +15,20 @@
         android:theme="@style/Theme.Cination.ActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".AddPostActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:theme="@style/Base.Theme.Cination"/>
+            android:theme="@style/Base.Theme.Cination" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:theme="@style/Base.Theme.Cination"/>
+            android:theme="@style/Base.Theme.Cination" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Base.Theme.Cination.ActionBar"/>
+            android:theme="@style/Base.Theme.Cination.ActionBar" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
