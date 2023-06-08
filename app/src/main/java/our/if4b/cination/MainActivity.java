@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
                         data = response.body().getData();
                         postViewAdapter.setData(data);
+                        binding.progressBar.setVisibility(View.INVISIBLE);
                     } else {
                         Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
@@ -95,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    public void onResume() {
-//        super.onResume();
-//        getAllPost();
-//    }
+    public void onResume() {
+        super.onResume();
+        getAllPost();
+    }
 }

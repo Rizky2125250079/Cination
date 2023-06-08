@@ -12,7 +12,6 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ApiService {
-    @FormUrlEncoded
     @GET("post")
     Call<ValueData<List<Post>>> getPost();
 
