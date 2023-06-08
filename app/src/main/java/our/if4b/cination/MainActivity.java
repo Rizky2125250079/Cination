@@ -1,14 +1,18 @@
 package our.if4b.cination;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import java.util.List;
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        if(!Utility.checkValue(this,"xUserId")){
+        if(!Utility.checkValue(this,"xUsername")){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -41,6 +45,54 @@ public class MainActivity extends AppCompatActivity {
         binding.rvPost.setLayoutManager(new LinearLayoutManager(this));
         binding.rvPost.setAdapter(postViewAdapter);
 
+        postViewAdapter.setOnItemLongClickListener(new PostViewAdapter.OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(View v, int position) {
+                PopupMenu popupMenu = new PopupMenu(MainActivity.this,v);
+                popupMenu.inflate(R.menu.menu_popup);
+                popupMenu.setGravity(Gravity.RIGHT);
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        int idMenu = item.getItemId();
+
+                        if(idMenu== R.id.action_edit) {
+                            Intent intent = new Intent(MainActivity.this, UpdatePostActivity.class);
+                            intent.putExtra("EXTRA DATA", data.get(position));
+                            startActivity(intent);
+                            return true;
+                        }
+                        else if(idMenu == R.id.action_delete) {
+                            String id = data.get(position).getId();
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                            alertDialogBuilder.setTitle("Konfirmasi");
+                            alertDialogBuilder.setMessage("Yakin ingin mengahapus post '" + data.get(position).getId() + "' ?");
+                            alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    deletePost(id);
+
+                                }
+                            });
+                            alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                            AlertDialog alertDialog = alertDialogBuilder.create();
+                            alertDialog.show();
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                });
+                popupMenu.show();
+            }
+        });
         binding.fabInput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +103,36 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void deletePost(String id) {
+        ApiService api = Utility.getRetrofit().create(ApiService.class);
+        Call<ValueNoData> call = api.deletePost(id);
+        call.enqueue(new Callback<ValueNoData>() {
+            @Override
+            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
+                if(response.code()==200){
+                    int success = response.body().getSuccess();
+                    String message = response.body().getMessage();
 
+                    if(success == 1){
+                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                        getAllPost();
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Response " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ValueNoData> call, Throwable t) {
+                System.out.println("Retrofit Error : " + t.getMessage());
+                Toast.makeText(MainActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
 
     private void getAllPost() {
