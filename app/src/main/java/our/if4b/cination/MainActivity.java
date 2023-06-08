@@ -40,7 +40,18 @@ public class MainActivity extends AppCompatActivity {
         postViewAdapter = new PostViewAdapter();
         binding.rvPost.setLayoutManager(new LinearLayoutManager(this));
         binding.rvPost.setAdapter(postViewAdapter);
+
+        binding.fabInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AddPostActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
 
     private void getAllPost() {
