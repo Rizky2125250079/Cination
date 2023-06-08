@@ -9,6 +9,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public interface ApiService {
     @FormUrlEncoded
@@ -28,7 +29,8 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("post")
-    Call<ValueNoData> addPost(@Field("negara") String negara,
+    Call<ValueNoData> addPost(@Field("user_id") String user_id,
+                              @Field("negara") String negara,
                               @Field("ibukota") String ibukota);
 
     @FormUrlEncoded
@@ -37,8 +39,8 @@ public interface ApiService {
                                  @Field("negara") String negara,
                                  @Field("ibukota") String ibukota);
 
-    @FormUrlEncoded
-    @DELETE("post")
-    Call<ValueNoData> deletePost(@Field("id") String id);
+
+    @DELETE("post/{id}")
+    Call<ValueNoData> deletePost(@Path("id") String id);
 
 }

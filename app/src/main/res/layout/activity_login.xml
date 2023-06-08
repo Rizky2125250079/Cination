@@ -62,6 +62,7 @@
             android:layout_height="wrap_content"
             android:text="Login"
             android:layout_marginTop="16dp"
+            android:backgroundTint="#394867"
             />
 
         <Button
@@ -72,6 +73,7 @@
             android:text="Belum Punya Akun? Silahkan Register dulu!"
             android:textAllCaps="false"
             android:textSize="14sp"
+            android:textColor="#394867"
             />
     </LinearLayout>
 

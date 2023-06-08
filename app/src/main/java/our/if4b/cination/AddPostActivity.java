@@ -29,7 +29,7 @@ public class AddPostActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String negara = binding.etNegara.getText().toString();
-                String kota = binding.etKota.getText().toString();
+                String ibukota = binding.etKota.getText().toString();
 
                 boolean bolehPost = true;
 
@@ -37,20 +37,20 @@ public class AddPostActivity extends AppCompatActivity {
                     bolehPost = false;
                     binding.etNegara.setError("Negara tidak boleh kosong!");
                 }
-                if(TextUtils.isEmpty(kota)){
+                if(TextUtils.isEmpty(ibukota)){
                     bolehPost = false;
-                    binding.etKota.setError("Negara tidak boleh kosong!");
+                    binding.etKota.setError("Ibu Kota tidak boleh kosong!");
                 }
                 if(bolehPost){
-                    String username = Utility.getValue(AddPostActivity.this,"xUsername");
-                    addPost(username, negara, kota);
+                    String user_id = Utility.getValue(AddPostActivity.this,"xUserId");
+                    addPost(user_id, negara, ibukota);
                 }
                 
             }
         });
     }
 
-    private void addPost(String username, String negara, String kota) {
+    private void addPost(String user_id, String negara, String ibukota) {
         binding.progressBar.setVisibility(View.VISIBLE);
         ApiService api = Utility.getRetrofit().create(ApiService.class);
         Call<ValueData<List<Post>>> call = api.getPost();

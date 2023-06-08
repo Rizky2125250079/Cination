@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.List;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getAllPost() {
+        binding.progressBar.setVisibility(View.VISIBLE);
         ApiService api = Utility.getRetrofit().create(ApiService.class);
         Call<ValueData<List<Post>>> call = api.getPost();
 

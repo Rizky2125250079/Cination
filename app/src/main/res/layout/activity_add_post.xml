@@ -41,7 +41,7 @@
             android:id="@+id/et_kota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kota"
+            android:hint="Ibu Kota"
             android:inputType="none"
             android:maxLength="180"
 
