@@ -38,6 +38,18 @@ public class User implements Parcelable {
         }
     };
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
+
     public String getId() {
         return id;
     }
