@@ -42,7 +42,7 @@ public class AddPostActivity extends AppCompatActivity {
                     binding.etKota.setError("Ibu Kota tidak boleh kosong!");
                 }
                 if(bolehPost){
-                    String user_id = Utility.getValue(AddPostActivity.this,"xUserId");
+                    String user_id = Utility.getValue(AddPostActivity.this,"xUsername");
                     addPost(user_id, negara, ibukota);
                 }
                 
