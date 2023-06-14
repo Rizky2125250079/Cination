@@ -34,7 +34,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_auth_image"
+                android:id="@+id/iv_alep"
                 android:layout_width="225px"
                 android:layout_height="318px"
                 android:src="@mipmap/ic_launcher"
@@ -48,7 +48,7 @@
                 android:text="Muhammad Alif Fahlevhi"
                 android:textSize="21sp"
                 android:textStyle="bold"
-                android:layout_toEndOf="@id/iv_auth_image"
+                android:layout_toEndOf="@id/iv_alep"
                 android:layout_marginLeft="20dp"
                 />
 
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2125250063"
-                android:layout_toEndOf="@id/iv_auth_image"
+                android:layout_toEndOf="@id/iv_alep"
                 android:layout_below="@id/tv_alep"
                 android:textSize="17sp"
                 android:layout_marginTop="5dp"
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_auth_image"
+                android:id="@+id/iv_peldi"
                 android:layout_width="225px"
                 android:layout_height="318px"
                 android:src="@mipmap/ic_launcher"
@@ -100,7 +100,7 @@
                 android:text="Veldy Piscessara"
                 android:textSize="21sp"
                 android:textStyle="bold"
-                android:layout_toEndOf="@id/iv_auth_image"
+                android:layout_toEndOf="@id/iv_peldi"
                 android:layout_marginLeft="20dp"
                 />
 
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2125250064"
-                android:layout_toEndOf="@id/iv_auth_image"
+                android:layout_toEndOf="@id/iv_peldi"
                 android:layout_below="@id/tv_peldi"
                 android:textSize="17sp"
                 android:layout_marginTop="5dp"
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_auth_image"
+                android:id="@+id/iv_riski"
                 android:layout_width="225px"
                 android:layout_height="318px"
                 android:src="@mipmap/ic_launcher"
@@ -152,7 +152,7 @@
                 android:text="Rizky Ridho Ramadhan"
                 android:textSize="21sp"
                 android:textStyle="bold"
-                android:layout_toEndOf="@id/iv_auth_image"
+                android:layout_toEndOf="@id/iv_riski"
                 android:layout_marginLeft="20dp"
                 />
 
@@ -161,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2125250079"
-                android:layout_toEndOf="@id/iv_auth_image"
+                android:layout_toEndOf="@id/iv_riski"
                 android:layout_below="@id/tv_riski"
                 android:textSize="17sp"
                 android:layout_marginTop="5dp"
