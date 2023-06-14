@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                             String id = data.get(position).getId();
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
                             alertDialogBuilder.setTitle("Konfirmasi");
-                            alertDialogBuilder.setMessage("Yakin ingin mengahapus post '" + data.get(position).getId() + "' ?");
+                            alertDialogBuilder.setMessage("Yakin ingin mengahapus post '" + data.get(position).getNegara() + "' ?");
                             alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
