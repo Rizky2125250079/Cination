@@ -27,6 +27,9 @@ public class UpdatePostActivity extends AppCompatActivity {
         post = getIntent().getParcelableExtra("EXTRA DATA");
         String id = post.getId();
 
+        binding.etNegara.setText(post.getNegara());
+        binding.etKota.setText(post.getIbukota());
+
         binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

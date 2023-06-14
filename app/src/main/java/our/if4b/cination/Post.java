@@ -14,6 +14,34 @@ public class Post implements Parcelable {
     private String modified_date;
     private String username;
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNegara(String negara) {
+        this.negara = negara;
+    }
+
+    public void setIbukota(String ibukota) {
+        this.ibukota = ibukota;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
+
+    public void setModified_date(String modified_date) {
+        this.modified_date = modified_date;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     protected Post(Parcel in) {
         id = in.readString();
         negara = in.readString();
