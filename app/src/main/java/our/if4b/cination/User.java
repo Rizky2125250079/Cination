@@ -39,7 +39,7 @@ public class User implements Parcelable {
     };
 
     public void setId(String id) {
-        this._id = _id;
+        this._id = id;
     }
 
     public void setUsername(String username) {
