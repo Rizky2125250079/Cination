@@ -28,7 +28,6 @@ public class PostViewAdapter extends RecyclerView.Adapter<PostViewAdapter.ViewHo
         Post post = data.get(pos);
         holder.postItemBinding.tvIbukota.setText(post.getIbukota());
         holder.postItemBinding.tvNegara.setText(post.getNegara());
-        holder.postItemBinding.tvCreatedDate.setText(post.getCreated_date());
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

@@ -36,15 +36,6 @@
                 android:textSize="15sp"
                 android:layout_marginTop="2dp"/>
 
-            <TextView
-                android:id="@+id/tv_created_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="01-01-2020 20:00:00"
-                android:layout_below="@+id/tv_ibukota"
-                android:textAlignment="textEnd"
-                android:layout_marginTop="2dp"/>
-
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
