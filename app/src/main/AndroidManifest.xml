@@ -15,9 +15,12 @@
         android:theme="@style/Theme.Cination.ActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".UpdatePostActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".AboutActivity"
             android:exported="false" />
+        <activity
+            android:name=".UpdatePostActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AddPostActivity"
             android:exported="false"
