@@ -4,19 +4,19 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class User implements Parcelable {
-    private String id;
+    private String _id;
     private String username;
     private String created_date;
 
     protected User(Parcel in) {
-        id = in.readString();
+        _id = in.readString();
         username = in.readString();
         created_date = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
+        dest.writeString(_id);
         dest.writeString(username);
         dest.writeString(created_date);
     }
@@ -39,7 +39,7 @@ public class User implements Parcelable {
     };
 
     public void setId(String id) {
-        this.id = id;
+        this._id = _id;
     }
 
     public void setUsername(String username) {
@@ -51,7 +51,7 @@ public class User implements Parcelable {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public String getUsername() {
